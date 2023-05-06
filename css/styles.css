@@ -1,12 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+:root{
+    --color-primario: #F9DAC6;
+    --color-secundario: #E56244;
+    --color-terciario: #F3B79B;
+    --color-header-font: white;
+
+
+}
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: black;
+    scroll-behavior:smooth;
   }
   header {
+    background-color: var(--color-secundario); ;
     height: 200px;
-    background-color: bisque;
+    width: 100%;
   }
+  .navbar-brand {
+    color : var(--color-secundario);
+  }
+  .navbar-brand:hover {
+    color : var(--color-secundario) !important;
+  }
+  .navbar-toggler {
+    background-color: #F0F0F0;
+  }
+  .nav-link{
+    color:white;
+  }
+  .nav-link:hover {
+    color : var(--color-terciario) !important;
+  }
+  .nav-link:visited , .navbar-brand:visited {
+    color : white;
+  }
+  .nav-link.disabled {
+    color: #6c757d;
+  }
+
+  .usd{
+    background-color: var(--color-primario) ;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 4px;
+    border: 1px solid #F0F0F0;
+  }
+  .usd .name{
+    font-weight: 100;
+    font-size: .9vw;
+  }
+  .usd .value {
+    font-weight: 600;
+    font-size: 1.1vw;
+  }
+  header h1{
+    font-weight: 600;
+    font-size: 80px;
+    color : var(--color-header-font); 
+  }
+
   .breaking-news {  display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
