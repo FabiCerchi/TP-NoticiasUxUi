@@ -1,160 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <!-- meta http-equiv="X-UA-Compatible" content="IE=edge" --->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Periodismo de primera - Infohur</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <title>Periodismo de primera - InfoHur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="./js/index.js"></script>
 </head>
+
 <body onload="mostrarFecha()">
     <header class="text-center">
-        <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-            <div class="p-1 container-fluid">
-              <a class="navbar-brand" href="#">InfoHur</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Ultimas Noticias</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Noticias Principales</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Subscribite!</a>
-                  </li>
-                </ul>
-              </div>
+        <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <div class="container-fluid">
+                <img src="./img/logo.png" alt="logo_noticias">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ultimas_noticicas">Ultimas Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#noticias_principales">Noticias Principales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Suscribite!</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
-        <div class="m-5 p-5">
-            <h1 class="text-capitalize">Infohur</h1>
+        </nav>
+        <div class="d-flex align-items-center justify-content-center header-title">
+            <h1 class="text-capitalize">InfoHur</h1>
         </div>
     </header>
-    <main class="mt-5 container-fluid">
-        <section class="container cotizaciones">
-            <h2>Cotizacion del dolar hoy</h2> 
-            <p>Fecha: <span id="date_now"></span></p>         
-            <div class="mt-4 row d-flex align-items-center justify-content-center">
-                <hr>
-                <div class="col usd">
-                    <h4 class="name">dolar banco nacion</h4>
-                    <h3 class="value">321312</h3>
+    <main class="container-fluid">
+        <section id="usd" class="container cotizaciones">
+            <h2>COTIZACIÓN DEL DÓLAR HOY</h2>
+            <p><span id="date">Fecha: </span><span id="date_now"></span></p>
+            <div id="cotizaciones_dia" class="mt-4 row container mx-auto">
+                <div class="col-12 col-md-6 col-xl-3 usd">
+                    <h4 class="name">dólar banco nación</h4>
+                    <h3 id="nacion" class="value"></h3>
                 </div>
-                <div class="col usd">
-                    <h4 class="name">dolar banco nacion</h4>
-                    <h3 class="value">321312</h3>
+                <div class="col-12 col-md-6 col-xl-3 usd">
+                    <h4 class="name">dólar libre</h4>
+                    <h3 id="libre" class="value"></h3>
                 </div>
-                <div class="col usd">
-                    <h4 class="name">dolar libre</h4>
-                    <h3 class="value">321312</h3>
+                <div class="col-12 col-md-6 col-xl-3 usd">
+                    <h4 class="name">dólar mep</h4>
+                    <h3 id="mep" class="value"></h3>
                 </div>
-                <div class="col usd">
-                    <h4 class="name">dolar mep</h4>
-                    <h3 class="value">321312</h3>
-                </div>
-                <div class="col usd">
-                    <h4 class="name">Contado con liqui</h4>
-                    <h3 class="value">321312</h3>
+                <div class="col-12 col-md-6 col-xl-3 usd">
+                    <h4 class="name">ccl</h4>
+                    <h3 id="ccl" class="value"></h3>
                 </div>
             </div>
+            <hr class="mt-4">
         </section>
-        <section class="mt-5 breaking-news container" style="border:1px solid black">
-            <article class="main-breaking-new">
-                <h2>Noticia principal 1</h2>
-                <div>badge</div>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis! Eveniet, nisi facere. Quas, reiciendis, in corporis delectus maiores ut, repudiandae architecto ratione est asperiores illo itaque?</h3>
-                <img src="" alt="">
-            </article>
-            <article class="breaking-new news">
-                <h2>Noticia principal 1</h2>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis! Eveniet, nisi facere. Quas, reiciendis, in corporis delectus maiores ut, repudiandae architecto ratione est asperiores illo itaque?</h3>
-                <img src="" alt="">
-            </article>
-            <article class="breaking-new-2 news">
-                <h2>Noticia principal 1</h2>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis! Eveniet, nisi facere. Quas, reiciendis, in corporis delectus maiores ut, repudiandae architecto ratione est asperiores illo itaque?</h3>
-                <img src="" alt="">
-            </article>
-            <article class="breaking-new-1 news">
-                <h2>Noticia principal 1</h2>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis! Eveniet, nisi facere. Quas, reiciendis, in corporis delectus maiores ut, repudiandae architecto ratione est asperiores illo itaque?</h3>
-                <img src="" alt="">
-            </article>
-            
+        <section id="ultimas_noticicas" class="container mt-5 p-2 text-justify">
+            <div class="row">
+                <div class="container col-12 col-xl-8 ultimo-momento">
+                    <a class="link" href="#"><h1>Apuran una nueva reunión cumbre en el PRO para intentar una solución a la pelea interna</h1></a>
+                    <span class="badge bg-danger">Ultimo Momento</span>
+                    <p class="mt-2">Por <span id="redactor">Carlos Gomez</span></p>
+                    <p>Mauricio Macri, Horacio Rodríguez Larreta, Patricia Bullrich y María Eugenia Vidal encabezarán
+                        otra vez un encuentro este lunes a la tarde junto con otros 4 dirigentes del partido. Anticipan
+                        que hablarán sobre las candidaturas en el distrito porteño y el bonaerense</p>
+                    <img class="row container mt-3" src="./img/main_new.jpg" alt="">
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div id=ultimo_momento_primera class="row mb-3 news">
+                        <div class="container col-12">
+                            <h5>Bajo un cielo encapotado y una lluvia incesante, Carlos III cumplió el sueño de ser
+                                coronado</h5>
+                            <p>Por <span id="redactor">Alejandra Sanchez</span></p>
+                            <img class="row container" src="./img/papa_new.avif" alt="">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 news" >
+                            <h5>EEUU: un tiroteo en un centro comercial de Texas dejó varios muertos</h5>
+                            <p>Por <span id="redactor">Andrea Almada</span></p>
+                            <img class="row container" src="./img/tiroteo_new.avif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4">
         </section>
     </main>
-    <section class="mt-5 other-news container" style="border:1px solid black">
-        <div class="other-news-title">
-            <h2>Otras noticias</h2>
-            <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita a fugiat porro velit nesciunt, repudiandae cum est magni deleniti modi recusandae magnam veritatis in dolorum perspiciatis maxime id! Ab, iste?</h5>
+    <section id="noticias_principales" class="container p-2 text-justify">
+        <h2 class="row container">Noticias principales</h2>
+        <div class="row justify-content-center mt-5 d-flex flex-wrap">
+            <article class="card col-12 col-xl-4" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </article>
+              <article class="card col-12 col-xl-4" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </article>
+              <article class="card col-12 col-xl-4" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </article>
+
         </div>
-        <article class="new-1">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/301" alt="">
-        </article>
-        <article class="new-2">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/302" alt="">
-        </article>
-        <article class="new-3">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/303" alt="">
-        </article>
-        <article class="new-4">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/304" alt="">
-        </article>
-        <article class="new-5">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/305" alt="">
-        </article>
-        <article class="new-6">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/306" alt="">
-        </article>
-        <article class="new-7">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/307" alt="">
-        </article>
-        <article class="new-8">
-            <h3>Noticia principal 1</h3>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium vitae in accusantium perspiciatis!</h4>
-            <p></p>
-            <img src="https://picsum.photos/200/308" alt="">
-        </article>
+
     </section>
-    <footer class="mt-5 container-fluid" style="border:1px solid black; height:300px; background:black">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <hr>
+    <footer class="mt-5">
+        <div>
+            <div class="enlaces">
+                <p><a href="#usd">Ir arriba</a></p>
+                <p><a href="mailto:angel.cerchi@estudiantes.unahur.edu.ar?subject=Consulta">Contactar</a></p>
+                <p><a href="tel:+1121444052">Llamar</a></p>
+            </div>
+            <p>La informacion de esta pagina web se extrajo de la pagina oficial de la <a href="https://www.infobae.com/"
+                    target="_blank"><span id="redactor">Infobae</span></a></p>
+            <p>© 2023 Fabian Cerchi</p>
         </div>
     </footer>
 </body>
+
 </html>
